@@ -8,7 +8,7 @@
 import Foundation
 
 
-extension String {
+public extension String {
     
     func dateParse() -> Date {
         return DateFormatter.allNumericDate.date(from: self) ?? Date()
