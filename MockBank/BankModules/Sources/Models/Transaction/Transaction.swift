@@ -8,7 +8,7 @@
 import Foundation
 import Helpers
 
-public struct Transaction : Identifiable {
+public struct Transaction : Identifiable, Decodable {
 
     public let id: Int
     public let date: String

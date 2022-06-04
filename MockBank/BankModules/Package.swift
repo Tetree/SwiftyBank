@@ -13,7 +13,9 @@ let package = Package(
         .library(name: "Models",
                  targets: ["Models"]),
         .library(name: "Networking",
-                 targets: ["Networking"])
+                 targets: ["Networking"]),
+        .library(name: "TransactionsMicroservice",
+                 targets: ["TransactionsMicroservice"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -28,6 +30,8 @@ let package = Package(
             name: "Models",
             dependencies: ["Helpers"]),
         .target(name: "Networking",
-               dependencies: [])
+               dependencies: []),
+        .target(name: "TransactionsMicroservice",
+               dependencies: ["Networking", "Models"])
     ]
 )

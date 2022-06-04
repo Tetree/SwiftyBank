@@ -10,7 +10,7 @@ import Combine
 
 public final class APIService: APIClient {
     
-    func request<T>(_ request: URLRequest) -> AnyPublisher<T, APIError> where T : Decodable {
+    public func request<T>(_ request: URLRequest) -> AnyPublisher<T, APIError> where T : Decodable {
         
         return URLSession.shared
             .dataTaskPublisher(for: request)

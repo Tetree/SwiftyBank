@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-protocol APIClient {
+public protocol APIClient {
     
     func request<T:Decodable>(_ request: URLRequest) -> AnyPublisher<T, APIError>
     
