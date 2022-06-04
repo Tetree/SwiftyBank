@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct RootView: View {
     var body: some View {
         NavigationView {
             ScrollView {
@@ -40,8 +40,8 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView()
-            ContentView()
+            RootView()
+            RootView()
                 .preferredColorScheme(.dark)
         }
     }

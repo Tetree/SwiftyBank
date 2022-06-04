@@ -5,12 +5,15 @@ import PackageDescription
 
 let package = Package(
     name: "BankModules",
+    platforms: [.iOS(.v15)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(name: "Helpers",
                  targets: ["Helpers"]),
         .library(name: "Models",
-                 targets: ["Models"])
+                 targets: ["Models"]),
+        .library(name: "Networking",
+                 targets: ["Networking"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -23,6 +26,8 @@ let package = Package(
                 dependencies: []),
         .target(
             name: "Models",
-            dependencies: ["Helpers"])
+            dependencies: ["Helpers"]),
+        .target(name: "Networking",
+               dependencies: [])
     ]
 )
