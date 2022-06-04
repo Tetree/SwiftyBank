@@ -10,8 +10,8 @@ import Combine
 import Models
 import Networking
 
-protocol TransactionsAPI {
+public protocol TransactionsAPI {
     
-    func transactions(_ request: URLRequest) -> AnyPublisher<[Transaction], APIError>
+    func transactions(for name: String, and lastName: String) -> AnyPublisher<[Transaction], APIError>
     
 }

@@ -16,6 +16,7 @@
 		A46698E7284BA4D900808661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A46698E6284BA4D900808661 /* Assets.xcassets */; };
 		A46698EA284BAD9300808661 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46698E9284BAD9300808661 /* TransactionRow.swift */; };
 		A46698EE284BAEAF00808661 /* TransactionListViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46698ED284BAEAF00808661 /* TransactionListViewmodel.swift */; };
+		A46698F0284BB4EC00808661 /* TransactionsMicroservice in Frameworks */ = {isa = PBXBuildFile; productRef = A46698EF284BB4EC00808661 /* TransactionsMicroservice */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A46698F0284BB4EC00808661 /* TransactionsMicroservice in Frameworks */,
 				A437345B284B9C00007D5746 /* Models in Frameworks */,
 				A4373454284B9A60007D5746 /* SwiftUIFontIcon in Frameworks */,
 			);
@@ -141,6 +143,7 @@
 			packageProductDependencies = (
 				A4373453284B9A60007D5746 /* SwiftUIFontIcon */,
 				A437345A284B9C00007D5746 /* Models */,
+				A46698EF284BB4EC00808661 /* TransactionsMicroservice */,
 			);
 			productName = MockBank;
 			productReference = A45C75A22847DF8400B4E85B /* MockBank.app */;
@@ -423,6 +426,10 @@
 		A437345A284B9C00007D5746 /* Models */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Models;
+		};
+		A46698EF284BB4EC00808661 /* TransactionsMicroservice */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TransactionsMicroservice;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

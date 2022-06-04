@@ -10,6 +10,8 @@ import Combine
 
 public final class APIService: APIClient {
     
+    public static let shared = APIService()
+    
     public func request<T>(_ request: URLRequest) -> AnyPublisher<T, APIError> where T : Decodable {
         
         return URLSession.shared

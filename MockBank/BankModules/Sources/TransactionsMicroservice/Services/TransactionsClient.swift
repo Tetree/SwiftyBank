@@ -12,13 +12,21 @@ import Models
 
 public final class TransactionsClient: TransactionsAPI {
     
-    private let apiClient: APIClient
+    private let apiClient: APIClient = APIService.shared
     
-    public init(apiClient: APIClient) {
-        self.apiClient = apiClient
-    }
-    
-    func transactions(_ request: URLRequest) -> AnyPublisher<[Transaction], APIError> {
+    public func transactions(for name: String, and lastName: String) -> AnyPublisher<[Transaction], APIError> {
+        
+        var request = URLRequest(url: Constants.transactionsEndpoint)
+        request.httpMethod = "post"
+        
+        let body = TransactionsRequestBody(id: "bankCCNumber", date: "date", institution: "bankCCName", account: "bankCCNumber", merchant: "companyName", amount: "numberInt", type: "personNickname", categoryId: "numberInt", category: "companyDepartment", isPending: "numberBool", isTransfer: "numberBool", isExpense: "numberBool", isEdited: "numberBool")
+        
+        let requestBody = TransactionRequest(token: Constants.apiKey, data: body)
+        
+        let bodyData = try! JSONEncoder().encode(requestBody)
+        
+        request.httpBody = bodyData
+        
         return apiClient.request(request)
     }
 }
