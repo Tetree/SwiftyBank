@@ -22,6 +22,7 @@ struct RecentTransactionsView: View {
                 NavigationLink {
                     
                     TransactionList()
+                        .environmentObject(transactionListVM)
                     
                 } label : {
                     HStack(spacing: 4) {

@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import SwiftUICharts
 
 struct TransactionView: View {
     @StateObject var viewmodel: TransactionListViewmodel
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -18,6 +20,23 @@ struct TransactionView: View {
                     Text("Overview")
                         .font(.title2)
                         .bold()
+                    
+                    let cumulativeData = viewmodel.accumulateTransactionsForCurrentMonth()
+                    
+                    let expenses = cumulativeData.last?.1 ?? 0
+                    
+                    CardView {
+                        VStack {
+                            ChartLabel(expenses.formatted(.currency(code: "USD")),
+                                       type: .title)
+                            LineChart()
+                        }
+                        .background(Color.systemBackground)
+                            
+                    }
+                    .data(cumulativeData)
+                    .chartStyle(ChartStyle(backgroundColor: Color.systemBackground, foregroundColor: ColorGradient(Color.icon.opacity(0.4), Color.icon)))
+                    .frame(height: 300)
                     
                     RecentTransactionsView()
                         .environmentObject(viewmodel)

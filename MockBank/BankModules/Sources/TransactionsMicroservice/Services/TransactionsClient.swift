@@ -19,13 +19,18 @@ public final class TransactionsClient: TransactionsAPI {
     public func transactions(for name: String, and lastName: String) -> AnyPublisher<[Transaction], APIError> {
         
         var request = URLRequest(url: Constants.transactionsEndpoint)
-        request.httpMethod = "post"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
         
-        let body = TransactionsRequestBody(id: "bankCCNumber", date: "date", institution: "bankCCName", account: "bankCCNumber", merchant: "companyName", amount: "numberInt", type: "personNickname", categoryId: "numberInt", category: "companyDepartment", isPending: "numberBool", isTransfer: "numberBool", isExpense: "numberBool", isEdited: "numberBool", repeats: 20)
+        let body = TransactionsRequestBody(id: "bankCCNumber", date: "dateToday", institution: "bankCCName", account: "bankCCNumber", merchant: "companyName", amount: "numberInt", isCredit: "numberBool", categoryId: "numberInt", category: "companyDepartment", isPending: "numberBool", isTransfer: "numberBool", isExpense: "numberBool", isEdited: "numberBool", repeats: 20)
         
         let requestBody = TransactionRequest(token: Constants.apiKey, data: body)
         
         let bodyData = try! JSONEncoder().encode(requestBody)
+        
+        let requestBodyJson = NSString(data: bodyData, encoding: String.Encoding.utf8.rawValue)
+        
+        print(requestBodyJson)
         
         request.httpBody = bodyData
         

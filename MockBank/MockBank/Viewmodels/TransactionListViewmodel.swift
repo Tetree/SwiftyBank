@@ -12,6 +12,8 @@ import Combine
 import Collections
 
 typealias TransactionGroup = OrderedDictionary<String, [Transaction]>
+typealias TransactionPrefixSum = [(String, Double)]
+
 final class TransactionListViewmodel: ObservableObject {
     
     @Published private(set) var transactions: [Transaction] = []
@@ -50,4 +52,25 @@ final class TransactionListViewmodel: ObservableObject {
         return TransactionGroup(grouping: transactions) {  $0.month }
     }
     
+    func accumulateTransactionsForCurrentMonth() -> TransactionPrefixSum {
+        guard !transactions.isEmpty else { return [] }
+        
+        let today = Date()
+        
+        let dateInterval = Calendar.current.dateInterval(of: .month, for: today)!
+        
+        var sum:Double = .zero
+        var cumulativeSum = TransactionPrefixSum()
+        
+        for date in stride(from: dateInterval.start, to: today, by: 60 * 60 * 24) {
+            
+            let dailyExpenses = transactions.filter { $0.parsedDate == date && $0.isExpense }
+            let dailyTotalExpenses = dailyExpenses.reduce(0) { $0 - $1.signedAmount }
+            
+            sum += dailyTotalExpenses
+            cumulativeSum.append((date.formatted(), sum))
+        }
+        
+        return cumulativeSum
+    }
 }

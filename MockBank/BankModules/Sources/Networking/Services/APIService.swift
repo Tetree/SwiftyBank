@@ -25,6 +25,10 @@ public final class APIService: APIClient {
                 
                 do {
                     
+                    let responseData = String(data: data, encoding: .utf8)
+                    let requestBodyJson = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+                    
+                    print(requestBodyJson)
                     return try JSONDecoder().decode(T.self, from: data)
                     
                 }catch {

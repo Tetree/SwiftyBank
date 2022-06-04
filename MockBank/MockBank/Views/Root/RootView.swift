@@ -9,6 +9,7 @@ import SwiftUI
 import TransactionsMicroservice
 
 struct RootView: View {
+    
     var body: some View {
         TabView {
             TransactionView(viewmodel: TransactionListViewmodel(transactionsClient: TransactionsClient()))

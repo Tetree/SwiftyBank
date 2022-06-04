@@ -19,7 +19,7 @@ struct TransactionsRequestBody: Codable {
     let account: String
     let merchant: String
     let amount: String
-    let type: String
+    let isCredit: String
     var categoryId: String
     var category: String
     var isPending: String
@@ -30,7 +30,7 @@ struct TransactionsRequestBody: Codable {
     
     private enum CodingKeys: String, CodingKey {
         case id, date, institution, account, merchant,
-        amount, type, categoryId, category, isPending, isTransfer,
+        amount, isCredit, categoryId, category, isPending, isTransfer,
         isExpense, isEdited, repeats = "_repeat"
     }
     
