@@ -11,12 +11,14 @@
 		A437345B284B9C00007D5746 /* Models in Frameworks */ = {isa = PBXBuildFile; productRef = A437345A284B9C00007D5746 /* Models */; };
 		A44159742849374E0019023B /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44159732849374E0019023B /* PreviewData.swift */; };
 		A45C75A62847DF8400B4E85B /* MockBankApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45C75A52847DF8400B4E85B /* MockBankApp.swift */; };
-		A45C75A82847DF8400B4E85B /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45C75A72847DF8400B4E85B /* RootView.swift */; };
+		A45C75A82847DF8400B4E85B /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45C75A72847DF8400B4E85B /* TransactionView.swift */; };
 		A45C75AD2847DF8500B4E85B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A45C75AC2847DF8500B4E85B /* Preview Assets.xcassets */; };
 		A46698E7284BA4D900808661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A46698E6284BA4D900808661 /* Assets.xcassets */; };
 		A46698EA284BAD9300808661 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46698E9284BAD9300808661 /* TransactionRow.swift */; };
 		A46698EE284BAEAF00808661 /* TransactionListViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46698ED284BAEAF00808661 /* TransactionListViewmodel.swift */; };
 		A46698F0284BB4EC00808661 /* TransactionsMicroservice in Frameworks */ = {isa = PBXBuildFile; productRef = A46698EF284BB4EC00808661 /* TransactionsMicroservice */; };
+		A46698F5284BC60100808661 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46698F4284BC60100808661 /* RootView.swift */; };
+		A46698F7284BCB0D00808661 /* RecentTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46698F6284BCB0D00808661 /* RecentTransactionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,11 +26,13 @@
 		A44159732849374E0019023B /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		A45C75A22847DF8400B4E85B /* MockBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45C75A52847DF8400B4E85B /* MockBankApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBankApp.swift; sourceTree = "<group>"; };
-		A45C75A72847DF8400B4E85B /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		A45C75A72847DF8400B4E85B /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
 		A45C75AC2847DF8500B4E85B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A46698E6284BA4D900808661 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A46698E9284BAD9300808661 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		A46698ED284BAEAF00808661 /* TransactionListViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewmodel.swift; sourceTree = "<group>"; };
+		A46698F4284BC60100808661 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		A46698F6284BCB0D00808661 /* RecentTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +59,8 @@
 		A4415975284938240019023B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A46698F1284BC5B000808661 /* Root */,
 				A46698EB284BADFE00808661 /* Transactions */,
-				A45C75A72847DF8400B4E85B /* RootView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -111,7 +115,9 @@
 		A46698EB284BADFE00808661 /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
+				A45C75A72847DF8400B4E85B /* TransactionView.swift */,
 				A46698E9284BAD9300808661 /* TransactionRow.swift */,
+				A46698F6284BCB0D00808661 /* RecentTransactionsView.swift */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -122,6 +128,14 @@
 				A46698ED284BAEAF00808661 /* TransactionListViewmodel.swift */,
 			);
 			path = Viewmodels;
+			sourceTree = "<group>";
+		};
+		A46698F1284BC5B000808661 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				A46698F4284BC60100808661 /* RootView.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,8 +216,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A45C75A82847DF8400B4E85B /* RootView.swift in Sources */,
+				A45C75A82847DF8400B4E85B /* TransactionView.swift in Sources */,
 				A46698EA284BAD9300808661 /* TransactionRow.swift in Sources */,
+				A46698F7284BCB0D00808661 /* RecentTransactionsView.swift in Sources */,
+				A46698F5284BC60100808661 /* RootView.swift in Sources */,
 				A44159742849374E0019023B /* PreviewData.swift in Sources */,
 				A45C75A62847DF8400B4E85B /* MockBankApp.swift in Sources */,
 				A46698EE284BAEAF00808661 /* TransactionListViewmodel.swift in Sources */,

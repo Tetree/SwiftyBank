@@ -16,7 +16,7 @@ public final class APIService: APIClient {
         
         return URLSession.shared
             .dataTaskPublisher(for: request)
-            .tryMap { (data: Data, response: URLResponse) in
+            .tryMap { (data: Data, response: URLResponse) -> T in
                 
                 guard let statusCode = (response as? HTTPURLResponse)?.statusCode,
                       (200..<300).contains(statusCode) else {

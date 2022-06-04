@@ -21,14 +21,13 @@ final class TransactionListViewmodel: ObservableObject {
     
     init(transactionsClient: TransactionsAPI) {
         self.transactionsClient = transactionsClient
+        getTransactions()
     }
     
     
     func getTransactions() {
-        let request = URLRequest(url: URL(string: "")!)
-        
         transactionsClient
-            .transactions(request)
+            .transactions(for: "randomName", and: "randomLastName")
             .sink { result in
                 switch result {
                 case .failure(let apiError):

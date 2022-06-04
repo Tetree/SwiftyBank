@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct RootView: View {
+struct TransactionView: View {
+    @StateObject var viewmodel: TransactionListViewmodel
     var body: some View {
         NavigationView {
             ScrollView {
@@ -17,6 +18,9 @@ struct RootView: View {
                     Text("Overview")
                         .font(.title2)
                         .bold()
+                    
+                    RecentTransactionsView()
+                        .environmentObject(viewmodel)
                     
                 }
                 .padding()
@@ -37,11 +41,11 @@ struct RootView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct TransactionView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RootView()
-            RootView()
+            TransactionView(viewmodel: TransactionListViewmodel(transactionsClient: PreviewTransactionApi()))
+            TransactionView(viewmodel: TransactionListViewmodel(transactionsClient: PreviewTransactionApi()))
                 .preferredColorScheme(.dark)
         }
     }

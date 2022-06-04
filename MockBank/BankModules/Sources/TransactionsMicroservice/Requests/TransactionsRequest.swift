@@ -26,4 +26,12 @@ struct TransactionsRequestBody: Codable {
     var isTransfer: String
     var isExpense: String
     var isEdited: String
+    var repeats: Int
+    
+    private enum CodingKeys: String, CodingKey {
+        case id, date, institution, account, merchant,
+        amount, type, categoryId, category, isPending, isTransfer,
+        isExpense, isEdited, repeats = "_repeat"
+    }
+    
 }
