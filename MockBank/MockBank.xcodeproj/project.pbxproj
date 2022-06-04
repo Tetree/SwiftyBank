@@ -19,6 +19,8 @@
 		A46698F0284BB4EC00808661 /* TransactionsMicroservice in Frameworks */ = {isa = PBXBuildFile; productRef = A46698EF284BB4EC00808661 /* TransactionsMicroservice */; };
 		A46698F5284BC60100808661 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46698F4284BC60100808661 /* RootView.swift */; };
 		A46698F7284BCB0D00808661 /* RecentTransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46698F6284BCB0D00808661 /* RecentTransactionsView.swift */; };
+		A46698F9284BD28100808661 /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46698F8284BD28100808661 /* TransactionList.swift */; };
+		A46698FC284BD69800808661 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = A46698FB284BD69800808661 /* Collections */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,7 @@
 		A46698ED284BAEAF00808661 /* TransactionListViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewmodel.swift; sourceTree = "<group>"; };
 		A46698F4284BC60100808661 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		A46698F6284BCB0D00808661 /* RecentTransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTransactionsView.swift; sourceTree = "<group>"; };
+		A46698F8284BD28100808661 /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +45,7 @@
 			files = (
 				A46698F0284BB4EC00808661 /* TransactionsMicroservice in Frameworks */,
 				A437345B284B9C00007D5746 /* Models in Frameworks */,
+				A46698FC284BD69800808661 /* Collections in Frameworks */,
 				A4373454284B9A60007D5746 /* SwiftUIFontIcon in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +122,7 @@
 				A45C75A72847DF8400B4E85B /* TransactionView.swift */,
 				A46698E9284BAD9300808661 /* TransactionRow.swift */,
 				A46698F6284BCB0D00808661 /* RecentTransactionsView.swift */,
+				A46698F8284BD28100808661 /* TransactionList.swift */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 				A4373453284B9A60007D5746 /* SwiftUIFontIcon */,
 				A437345A284B9C00007D5746 /* Models */,
 				A46698EF284BB4EC00808661 /* TransactionsMicroservice */,
+				A46698FB284BD69800808661 /* Collections */,
 			);
 			productName = MockBank;
 			productReference = A45C75A22847DF8400B4E85B /* MockBank.app */;
@@ -189,6 +195,7 @@
 			mainGroup = A45C75992847DF8400B4E85B;
 			packageReferences = (
 				A4373452284B9A60007D5746 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */,
+				A46698FA284BD69800808661 /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = A45C75A32847DF8400B4E85B /* Products */;
 			projectDirPath = "";
@@ -218,6 +225,7 @@
 			files = (
 				A45C75A82847DF8400B4E85B /* TransactionView.swift in Sources */,
 				A46698EA284BAD9300808661 /* TransactionRow.swift in Sources */,
+				A46698F9284BD28100808661 /* TransactionList.swift in Sources */,
 				A46698F7284BCB0D00808661 /* RecentTransactionsView.swift in Sources */,
 				A46698F5284BC60100808661 /* RootView.swift in Sources */,
 				A44159742849374E0019023B /* PreviewData.swift in Sources */,
@@ -431,6 +439,14 @@
 				kind = branch;
 			};
 		};
+		A46698FA284BD69800808661 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -446,6 +462,11 @@
 		A46698EF284BB4EC00808661 /* TransactionsMicroservice */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TransactionsMicroservice;
+		};
+		A46698FB284BD69800808661 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A46698FA284BD69800808661 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -28,6 +28,8 @@ public struct Transaction : Identifiable, Decodable, Hashable {
     
     public var signedAmount: Double { type == TransactionType.credit.rawValue ? amount : -amount }
     
+    public var month:String { parsedDate.formatted(.dateTime.year().month(.wide)) }
+    
     public init(id: Int, date: String, institution: String, account: String, merchant: String, amount: Double, type: TransactionType.RawValue, categoryId: Int, category: String, isPending: Bool, isTransfer: Bool, isExpense: Bool, isEdited: Bool) {
         self.id = id
         self.date = date

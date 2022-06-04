@@ -21,6 +21,8 @@ struct RecentTransactionsView: View {
                 //MARK: - Navigation link
                 NavigationLink {
                     
+                    TransactionList()
+                    
                 } label : {
                     HStack(spacing: 4) {
                         Text("See All")
@@ -53,9 +55,13 @@ struct RecentTransactionsView_Previews: PreviewProvider {
     }()
     static var previews: some View {
         Group {
-            RecentTransactionsView()
-            RecentTransactionsView()
-                .preferredColorScheme(.dark)
+            NavigationView {
+                RecentTransactionsView()
+            }
+            NavigationView {
+                RecentTransactionsView()
+                    .preferredColorScheme(.dark)
+            }
         }
         .environmentObject(transactionListVM)
     }

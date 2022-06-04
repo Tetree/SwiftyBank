@@ -37,16 +37,23 @@ struct TransactionView: View {
                 }
             }
             
-        }.navigationViewStyle(.stack)
+        }
+        .navigationViewStyle(.stack)
+        .accentColor(.primary)
     }
 }
 
 struct TransactionView_Previews: PreviewProvider {
+    static let transactionListVM: TransactionListViewmodel = {
+        return TransactionListViewmodel(transactionsClient: PreviewTransactionApi())
+    }()
     static var previews: some View {
         Group {
             TransactionView(viewmodel: TransactionListViewmodel(transactionsClient: PreviewTransactionApi()))
+            
             TransactionView(viewmodel: TransactionListViewmodel(transactionsClient: PreviewTransactionApi()))
                 .preferredColorScheme(.dark)
         }
+        .environmentObject(transactionListVM)
     }
 }
