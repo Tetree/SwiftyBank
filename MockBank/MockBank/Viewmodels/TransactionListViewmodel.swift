@@ -16,8 +16,8 @@ typealias TransactionPrefixSum = [(String, Double)]
 
 final class TransactionListViewmodel: ObservableObject {
     
-    @Published private(set) var transactions: [Transaction] = []
-    @Published private(set) var errorMessage: String?
+    @Published private(set) var state: ResultState = .loading
+    private(set) var transactions: [Transaction] = []
     
     private let transactionsClient: TransactionsAPI
     
@@ -29,17 +29,29 @@ final class TransactionListViewmodel: ObservableObject {
     
     
     func getTransactions() {
+        state = .loading
         transactionsClient
             .transactions(for: "randomName", and: "randomLastName")
-            .sink { result in
+            .sink { [weak self] result in
                 switch result {
                 case .failure(let apiError):
-                    break
+                    var message = ""
+                    switch apiError {
+                    case .unreachable:
+                        message = "No internet connection"
+                    case .failedRequest:
+                        message = "Server is down.\n Please try again later"
+                    default:
+                        message = "Something went wrong.\nPlease try again later"
+                    }
+                    self?.state = .failure(message)
                 case .finished:
                     print("finished")
+                    self?.state = .success
                 }
             } receiveValue: { [weak self] transactionsArray in
                 self?.transactions = transactionsArray
+                self?.state = .success
             }
             .store(in: &subscriptions)
 

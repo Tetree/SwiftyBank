@@ -22,9 +22,6 @@ struct RootView: View {
             let viewModel = TransactionListViewmodel(transactionsClient: TransactionsClient())
             
             TransactionView(viewmodel: viewModel)
-                .onAppear() {
-                    viewModel.getTransactions()
-                }
                 .tabItem {
                     Image(systemName: "wallet.pass")
                     Text("Transactions")
