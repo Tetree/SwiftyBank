@@ -75,7 +75,10 @@ final class TransactionListViewmodel: ObservableObject {
         
         for date in stride(from: dateInterval.start, to: today, by: 60 * 60 * 24) {
             
-            let dailyExpenses = transactions.filter { $0.parsedDate == date && $0.isExpense }
+            //API return mock transactios for the current day so we need
+            //not filter for them
+            //with a different API we would need to filter for dates that match the current day
+            let dailyExpenses = transactions.filter { $0.isExpense }
             let dailyTotalExpenses = dailyExpenses.reduce(0) { $0 - $1.signedAmount }
             
             sum += dailyTotalExpenses
