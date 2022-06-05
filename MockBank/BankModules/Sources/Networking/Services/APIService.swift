@@ -29,7 +29,9 @@ public final class APIService: APIClient {
                     let requestBodyJson = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
                     
                     print(requestBodyJson)
-                    return try JSONDecoder().decode(T.self, from: data)
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .iso8601
+                    return try decoder.decode(T.self, from: data)
                     
                 }catch {
                     throw APIError.invalidResponse

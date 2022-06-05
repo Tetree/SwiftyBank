@@ -59,7 +59,7 @@ final class TransactionListViewmodel: ObservableObject {
         
         let dateInterval = Calendar.current.dateInterval(of: .month, for: today)!
         
-        var sum:Double = .zero
+        var sum:Int = .zero
         var cumulativeSum = TransactionPrefixSum()
         
         for date in stride(from: dateInterval.start, to: today, by: 60 * 60 * 24) {
@@ -68,7 +68,7 @@ final class TransactionListViewmodel: ObservableObject {
             let dailyTotalExpenses = dailyExpenses.reduce(0) { $0 - $1.signedAmount }
             
             sum += dailyTotalExpenses
-            cumulativeSum.append((date.formatted(), sum))
+            cumulativeSum.append((date.formatted(), Double(sum)))
         }
         
         return cumulativeSum

@@ -10,27 +10,28 @@ import Helpers
 
 public struct Transaction : Identifiable, Decodable, Hashable {
 
-    public let id: Int
-    public let date: String
-    public let institution: String
     public let account: String
+    public let amount: Int
+    public let category: String
+    public let categoryID: Int
+    public let date, id, institution: String
+    public let isCredit, isEdited, isExpense, isPending: Bool
+    public let isTransfer: Bool
     public let merchant: String
-    public let amount: Double
-    public let isCredit: Bool
-    public var categoryId: Int
-    public var category: String
-    public var isPending: Bool
-    public var isTransfer: Bool
-    public var isExpense: Bool
-    public var isEdited: Bool
+
+    enum CodingKeys: String, CodingKey {
+        case account, amount, category
+        case categoryID = "categoryId"
+        case date, id, institution, isCredit, isEdited, isExpense, isPending, isTransfer, merchant
+    }
     
     public var parsedDate:Date { date.dateParse() }
     
-    public var signedAmount: Double { isCredit ? amount : -amount }
+    public var signedAmount: Int { isCredit ? amount : -amount }
     
     public var month:String { parsedDate.formatted(.dateTime.year().month(.wide)) }
     
-    public init(id: Int, date: String, institution: String, account: String, merchant: String, amount: Double, isCredit: Bool, categoryId: Int, category: String, isPending: Bool, isTransfer: Bool, isExpense: Bool, isEdited: Bool) {
+    public init(id: String, date: String, institution: String, account: String, merchant: String, amount: Int, isCredit: Bool, categoryId: Int, category: String, isPending: Bool, isTransfer: Bool, isExpense: Bool, isEdited: Bool) {
         self.id = id
         self.date = date
         self.institution = institution
@@ -38,7 +39,7 @@ public struct Transaction : Identifiable, Decodable, Hashable {
         self.merchant = merchant
         self.amount = amount
         self.isCredit = isCredit
-        self.categoryId = categoryId
+        self.categoryID = categoryId
         self.category = category
         self.isPending = isPending
         self.isTransfer = isTransfer

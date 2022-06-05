@@ -54,7 +54,7 @@ struct TransactionRow: View {
 }
 
 struct TransactionRow_Previews: PreviewProvider {
-    static let transactionPreviewData = Transaction(id: 1, date: "02/06/2022", institution: "BNP", account: "Visa Electron", merchant: "Apple", amount: 300.2, isCredit: true, categoryId: 675, category: "Wearables", isPending: false, isTransfer: false, isExpense: true, isEdited: false)
+    static let transactionPreviewData = Transaction(id: "1", date: "02/06/2022", institution: "BNP", account: "Visa Electron", merchant: "Apple", amount: 300, isCredit: true, categoryId: 675, category: "Wearables", isPending: false, isTransfer: false, isExpense: true, isEdited: false)
     
     static var previews: some View {
         Group {

@@ -18,11 +18,11 @@ struct RootView: View {
                     Text("Home")
                 }
             
-            TransactionView(viewmodel: TransactionListViewmodel(transactionsClient: TransactionsClient()))
-                .tabItem {
-                    Image(systemName: "house")
-                    Text("Home")
-                }
+//            TransactionView(viewmodel: TransactionListViewmodel(transactionsClient: TransactionsClient()))
+//                .tabItem {
+//                    Image(systemName: "house")
+//                    Text("Home")
+//                }
         }
     }
 }
