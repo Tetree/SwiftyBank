@@ -25,7 +25,6 @@ final class TransactionListViewmodel: ObservableObject {
     
     init(transactionsClient: TransactionsAPI) {
         self.transactionsClient = transactionsClient
-        getTransactions()
     }
     
     

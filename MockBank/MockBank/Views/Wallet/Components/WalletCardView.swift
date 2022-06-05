@@ -9,8 +9,6 @@ import SwiftUI
 
 struct WalletCardView: View {
     var title = "Cards"
-    var x: CGFloat = 100
-    var y: CGFloat = -100
     
     var body: some View {
         VStack {

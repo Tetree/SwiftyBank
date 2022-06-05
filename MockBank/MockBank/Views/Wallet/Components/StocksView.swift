@@ -1,5 +1,5 @@
 //
-//  WalletPurchasesView.swift
+//  StocksView.swift
 //  MockBank
 //
 //  Created by Nuno Mota on 05/06/2022.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct WalletPurchasesView: View {
-    var title = "Groceries"
-    var subtitle = "6 Transactions"
+struct StocksView: View {
+    var title = "Apple"
+    var subtitle = "+1.7%"
     var number = "1"
     var amount = "$364.00"
     var color = Color.blue
@@ -37,8 +37,8 @@ struct WalletPurchasesView: View {
     }
 }
 
-struct WalletPurchasesView_Previews: PreviewProvider {
+struct StocksView_Previews: PreviewProvider {
     static var previews: some View {
-        WalletPurchasesView()
+        StocksView()
     }
 }

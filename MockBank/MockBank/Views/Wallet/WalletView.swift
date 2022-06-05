@@ -33,15 +33,15 @@ struct WalletView: View {
             
             HStack {
                 VStack {
-                    WalletCardView(title: "Debit", x: 300, y: -300)
+                    WalletCardView(title: "Debit")
                         .frame(width: 160, height: 200)
-                    WalletCardView(title: "Bank", x: -200, y: 300)
+                    WalletCardView(title: "Bank")
                         .frame(width: 160, height: 100)
                 }
                 VStack {
-                    WalletCardView(title: "Coins", x: -200, y: 0)
+                    WalletCardView(title: "Coins")
                         .frame(width: 160, height: 150)
-                    WalletCardView(title: "NFTs", x: 300, y: 0)
+                    WalletCardView(title: "NFTs")
                         .frame(width: 160, height: 150)
                 }
             }
@@ -52,9 +52,9 @@ struct WalletView: View {
                 .padding(24)
             
             VStack {
-                WalletPurchasesView(title: "Groceries", subtitle: "3 transactions", number: "1", amount: "$364.00", color: .blue)
-                WalletPurchasesView(title: "Entertainment", subtitle: "6 transactions", number: "2", amount: "$952.00", color: .indigo)
-                WalletPurchasesView(title: "Restaurants", subtitle: "12 transactions", number: "3", amount: "$602.50", color: .pink)
+                StocksView(title: "Apple", subtitle: "+1.7%", number: "1", amount: "$364.00", color: .blue)
+                StocksView(title: "Google", subtitle: "+0.7%", number: "2", amount: "$952.00", color: .indigo)
+                StocksView(title: "Netflix", subtitle: "-1.4%", number: "3", amount: "$602.50", color: .pink)
             }
             .padding(.horizontal, 24)
             

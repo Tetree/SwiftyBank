@@ -19,7 +19,12 @@ struct RootView: View {
                     Text("Home")
                 }
             
-            TransactionView(viewmodel: TransactionListViewmodel(transactionsClient: TransactionsClient()))
+            let viewModel = TransactionListViewmodel(transactionsClient: TransactionsClient())
+            
+            TransactionView(viewmodel: viewModel)
+                .onAppear() {
+                    viewModel.getTransactions()
+                }
                 .tabItem {
                     Image(systemName: "wallet.pass")
                     Text("Transactions")
