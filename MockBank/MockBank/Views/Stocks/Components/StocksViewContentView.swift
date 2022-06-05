@@ -1,5 +1,5 @@
 //
-//  BottomSheetContetView.swift
+//  StocksViewContentView.swift
 //  MockBank
 //
 //  Created by Nuno Mota on 05/06/2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BottomSheetContentView: View {
+struct StocksViewContentView: View {
     var body: some View {
         VStack {
             RoundedRectangle(cornerRadius: 3, style: .continuous)
@@ -15,9 +15,9 @@ struct BottomSheetContentView: View {
                 .padding(8)
             
             HStack(spacing: 16) {
-                Text("Cards").font(.largeTitle).bold()
+                Text("Stocks").font(.largeTitle).bold()
                 Button {} label: {
-                    Label("Add", systemImage: "plus.circle.fill")
+                    Label("Buy", systemImage: "plus.circle.fill")
                         .font(.body.bold())
                         .foregroundColor(.white)
                         .padding(8)
@@ -31,10 +31,10 @@ struct BottomSheetContentView: View {
             .padding(24)
             
             HStack {
-                WalletCardView(title: "Apple")
+                StocksCardView(title: "AAPL")
                     .frame(width: 140, height: 200)
                 Spacer()
-                WalletCardView(title: "Bank")
+                StocksCardView(title: "GOOGL")
                     .frame(width: 140, height: 200)
             }
             .padding(24)
@@ -46,9 +46,9 @@ struct BottomSheetContentView: View {
                 .padding(24)
             
             VStack {
-                StocksView(title: "Apple", subtitle: "+1.7%", number: "1", amount: "$364.00")
-                StocksView(title: "Google", subtitle: "-5%", number: "2", amount: "$952.00")
-                StocksView(title: "Amazon", subtitle: "+12%", number: "3", amount: "$602.50")
+                StocksRowView(title: "Apple", subtitle: "+1.7%", number: "1", amount: "$364.00")
+                StocksRowView(title: "Google", subtitle: "-5%", number: "2", amount: "$952.00")
+                StocksRowView(title: "Amazon", subtitle: "+12%", number: "3", amount: "$602.50")
             }
             .padding(.horizontal, 24)
             
@@ -58,11 +58,11 @@ struct BottomSheetContentView: View {
     }
 }
 
-struct BottomSheetContentView_Previews: PreviewProvider {
+struct StocksViewContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            BottomSheetContentView()
-            BottomSheetContentView()
+            StocksViewContentView()
+            StocksViewContentView()
                 .preferredColorScheme(.dark)
         }
     }

@@ -25,10 +25,13 @@
 		A4669902284CC05500808661 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4669901284CC05500808661 /* WalletView.swift */; };
 		A4669906284CC0B800808661 /* WalletCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4669905284CC0B800808661 /* WalletCardView.swift */; };
 		A4669909284CC13100808661 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4669908284CC13100808661 /* RoundedCorner.swift */; };
-		A466990B284CC1B200808661 /* StocksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A466990A284CC1B200808661 /* StocksView.swift */; };
+		A466990B284CC1B200808661 /* StocksRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A466990A284CC1B200808661 /* StocksRowView.swift */; };
 		A466990F284CCB0100808661 /* ResultState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A466990E284CCB0100808661 /* ResultState.swift */; };
-		A4669912284CD1A500808661 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4669911284CD1A500808661 /* BottomSheetView.swift */; };
-		A4669915284CED3900808661 /* BottomSheetContetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4669914284CED3900808661 /* BottomSheetContetView.swift */; };
+		A4669912284CD1A500808661 /* StocksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4669911284CD1A500808661 /* StocksView.swift */; };
+		A4669915284CED3900808661 /* StocksViewContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4669914284CED3900808661 /* StocksViewContentView.swift */; };
+		A4669918284CF40800808661 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4669917284CF40800808661 /* CustomTabView.swift */; };
+		A466991B284CF4BD00808661 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A466991A284CF4BD00808661 /* TabBarButton.swift */; };
+		A466991D284CFADB00808661 /* StocksCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A466991C284CFADB00808661 /* StocksCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,10 +50,13 @@
 		A4669901284CC05500808661 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		A4669905284CC0B800808661 /* WalletCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCardView.swift; sourceTree = "<group>"; };
 		A4669908284CC13100808661 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
-		A466990A284CC1B200808661 /* StocksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksView.swift; sourceTree = "<group>"; };
+		A466990A284CC1B200808661 /* StocksRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksRowView.swift; sourceTree = "<group>"; };
 		A466990E284CCB0100808661 /* ResultState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultState.swift; sourceTree = "<group>"; };
-		A4669911284CD1A500808661 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
-		A4669914284CED3900808661 /* BottomSheetContetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetContetView.swift; sourceTree = "<group>"; };
+		A4669911284CD1A500808661 /* StocksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksView.swift; sourceTree = "<group>"; };
+		A4669914284CED3900808661 /* StocksViewContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksViewContentView.swift; sourceTree = "<group>"; };
+		A4669917284CF40800808661 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
+		A466991A284CF4BD00808661 /* TabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
+		A466991C284CFADB00808661 /* StocksCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +86,10 @@
 			isa = PBXGroup;
 			children = (
 				A46698F1284BC5B000808661 /* Root */,
+				A4669916284CF3F300808661 /* TabView */,
 				A4669900284CC04500808661 /* Wallet */,
 				A46698EB284BADFE00808661 /* Transactions */,
-				A4669910284CD18100808661 /* BottomSheet */,
+				A4669910284CD18100808661 /* Stocks */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				A4669905284CC0B800808661 /* WalletCardView.swift */,
-				A466990A284CC1B200808661 /* StocksView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -205,21 +211,40 @@
 			path = State;
 			sourceTree = "<group>";
 		};
-		A4669910284CD18100808661 /* BottomSheet */ = {
+		A4669910284CD18100808661 /* Stocks */ = {
 			isa = PBXGroup;
 			children = (
 				A4669913284CED2700808661 /* Components */,
-				A4669911284CD1A500808661 /* BottomSheetView.swift */,
+				A4669911284CD1A500808661 /* StocksView.swift */,
 			);
-			path = BottomSheet;
+			path = Stocks;
 			sourceTree = "<group>";
 		};
 		A4669913284CED2700808661 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				A4669914284CED3900808661 /* BottomSheetContetView.swift */,
+				A466990A284CC1B200808661 /* StocksRowView.swift */,
+				A4669914284CED3900808661 /* StocksViewContentView.swift */,
+				A466991C284CFADB00808661 /* StocksCardView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		A4669916284CF3F300808661 /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				A4669919284CF4B100808661 /* TabBarButton */,
+				A4669917284CF40800808661 /* CustomTabView.swift */,
+			);
+			path = TabView;
+			sourceTree = "<group>";
+		};
+		A4669919284CF4B100808661 /* TabBarButton */ = {
+			isa = PBXGroup;
+			children = (
+				A466991A284CF4BD00808661 /* TabBarButton.swift */,
+			);
+			path = TabBarButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,10 +329,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A466991B284CF4BD00808661 /* TabBarButton.swift in Sources */,
 				A45C75A82847DF8400B4E85B /* TransactionView.swift in Sources */,
 				A46698EA284BAD9300808661 /* TransactionRow.swift in Sources */,
-				A4669912284CD1A500808661 /* BottomSheetView.swift in Sources */,
-				A466990B284CC1B200808661 /* StocksView.swift in Sources */,
+				A4669912284CD1A500808661 /* StocksView.swift in Sources */,
+				A466990B284CC1B200808661 /* StocksRowView.swift in Sources */,
 				A4669902284CC05500808661 /* WalletView.swift in Sources */,
 				A46698F9284BD28100808661 /* TransactionList.swift in Sources */,
 				A4669906284CC0B800808661 /* WalletCardView.swift in Sources */,
@@ -315,8 +341,10 @@
 				A46698F5284BC60100808661 /* RootView.swift in Sources */,
 				A44159742849374E0019023B /* PreviewData.swift in Sources */,
 				A466990F284CCB0100808661 /* ResultState.swift in Sources */,
+				A4669918284CF40800808661 /* CustomTabView.swift in Sources */,
+				A466991D284CFADB00808661 /* StocksCardView.swift in Sources */,
 				A45C75A62847DF8400B4E85B /* MockBankApp.swift in Sources */,
-				A4669915284CED3900808661 /* BottomSheetContetView.swift in Sources */,
+				A4669915284CED3900808661 /* StocksViewContentView.swift in Sources */,
 				A4669909284CC13100808661 /* RoundedCorner.swift in Sources */,
 				A46698EE284BAEAF00808661 /* TransactionListViewmodel.swift in Sources */,
 			);

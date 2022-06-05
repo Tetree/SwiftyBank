@@ -9,29 +9,40 @@ import SwiftUI
 import TransactionsMicroservice
 
 struct RootView: View {
-    
+    @State var selectedTab: String
     var body: some View {
-        TabView {
+        ZStack(alignment: .bottom) {
             
-            WalletView()
-                .tabItem {
-                    Image(systemName: "house")
-                    Text("Home")
+            VStack {
+                switch selectedTab {
+                case "house":
+                    WalletView()
+                    
+                case "wallet.pass":
+                    let viewModel = TransactionListViewmodel(transactionsClient: TransactionsClient())
+                    
+                    TransactionView(viewmodel: viewModel)
+                default:
+                    StocksViewContentView()
                 }
+                
+                Spacer(minLength: 80)
+            }
+            .background(Color.background)
             
-            let viewModel = TransactionListViewmodel(transactionsClient: TransactionsClient())
-            
-            TransactionView(viewmodel: viewModel)
-                .tabItem {
-                    Image(systemName: "wallet.pass")
-                    Text("Transactions")
-                }
+            CustomTabView(selectedTab: $selectedTab)
+                .background(Color.background)
         }
+        .ignoresSafeArea(edges: .bottom)
     }
 }
 
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
-        RootView()
+        Group {
+            RootView(selectedTab: "house")
+            RootView(selectedTab: "house")
+                .preferredColorScheme(.dark)
+        }
     }
 }

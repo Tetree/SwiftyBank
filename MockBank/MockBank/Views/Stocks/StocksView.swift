@@ -1,5 +1,5 @@
 //
-//  BottomSheet.swift
+//  StocksView.swift
 //  MockBank
 //
 //  Created by Nuno Mota on 05/06/2022.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct BottomSheetView: View {
+struct StocksView: View {
     var body: some View {
         VStack {
-            BottomSheetContentView()
+            StocksViewContentView()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.background)
@@ -19,9 +19,14 @@ struct BottomSheetView: View {
     }
 }
 
-struct BottomSheetView_Previews: PreviewProvider {
+struct StocksView_Previews: PreviewProvider {
     static var previews: some View {
-        BottomSheetView()
-            .background(.black)
+        Group {
+            StocksView()
+                .background(.black)
+            StocksView()
+                .background(.black)
+                .preferredColorScheme(.dark)
+        }
     }
 }

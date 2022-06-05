@@ -1,5 +1,5 @@
 //
-//  StocksView.swift
+//  StocksRowView.swift
 //  MockBank
 //
 //  Created by Nuno Mota on 05/06/2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StocksView: View {
+struct StocksRowView: View {
     var title = "Apple"
     var subtitle = "+1.7%"
     var number = "1"
@@ -36,8 +36,8 @@ struct StocksView: View {
     }
 }
 
-struct StocksView_Previews: PreviewProvider {
+struct StocksRowView_Previews: PreviewProvider {
     static var previews: some View {
-        StocksView()
+        StocksRowView()
     }
 }

@@ -11,7 +11,8 @@ import SwiftUI
 struct MockBankApp: App {
     var body: some Scene {
         WindowGroup {
-            RootView()
+            RootView(selectedTab: "house")
+                .preferredColorScheme(.dark)
         }
     }
 }
