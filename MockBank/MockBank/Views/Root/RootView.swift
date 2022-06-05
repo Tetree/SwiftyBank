@@ -12,17 +12,18 @@ struct RootView: View {
     
     var body: some View {
         TabView {
-            TransactionView(viewmodel: TransactionListViewmodel(transactionsClient: TransactionsClient()))
+            
+            WalletView()
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
                 }
             
-//            TransactionView(viewmodel: TransactionListViewmodel(transactionsClient: TransactionsClient()))
-//                .tabItem {
-//                    Image(systemName: "house")
-//                    Text("Home")
-//                }
+            TransactionView(viewmodel: TransactionListViewmodel(transactionsClient: TransactionsClient()))
+                .tabItem {
+                    Image(systemName: "wallet.pass")
+                    Text("Transactions")
+                }
         }
     }
 }

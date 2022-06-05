@@ -23,20 +23,24 @@ struct TransactionView: View {
                     
                     let cumulativeData = viewmodel.accumulateTransactionsForCurrentMonth()
                     
-                    let expenses = cumulativeData.last?.1 ?? 0
-                    
-                    CardView {
-                        VStack {
-                            ChartLabel(expenses.formatted(.currency(code: "USD")),
-                                       type: .title)
-                            LineChart()
+                    if !cumulativeData.isEmpty {
+                        let expenses = cumulativeData.last?.1 ?? 0
+                        
+                        CardView {
+                            VStack(alignment: .leading) {
+                                ChartLabel(expenses.formatted(.currency(code: "USD")),
+                                           type: .title,
+                                           format: "$%.02f")
+                                LineChart()
+                            }
+                            .background(Color.systemBackground)
+                                
                         }
-                        .background(Color.systemBackground)
-                            
+                        .data(cumulativeData)
+                        .chartStyle(ChartStyle(backgroundColor: Color.systemBackground, foregroundColor: ColorGradient(Color.icon.opacity(0.4), Color.icon)))
+                        .frame(height: 300)
                     }
-                    .data(cumulativeData)
-                    .chartStyle(ChartStyle(backgroundColor: Color.systemBackground, foregroundColor: ColorGradient(Color.icon.opacity(0.4), Color.icon)))
-                    .frame(height: 300)
+                    
                     
                     RecentTransactionsView()
                         .environmentObject(viewmodel)
@@ -45,7 +49,8 @@ struct TransactionView: View {
                 .padding()
                 .frame(maxWidth: .infinity)
                 
-            }.background(Color.background)
+            }
+            .background(Color.background)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 //MARK: - Navigation Item
