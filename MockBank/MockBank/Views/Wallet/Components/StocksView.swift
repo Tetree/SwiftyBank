@@ -12,7 +12,6 @@ struct StocksView: View {
     var subtitle = "+1.7%"
     var number = "1"
     var amount = "$364.00"
-    var color = Color.blue
     
     var body: some View {
         HStack(spacing: 12) {
